@@ -1,0 +1,33 @@
+{
+    "name": "ostrikov-g/php-snake-game",
+    "description": "",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "OstrikovG\\PhpSnakeGame\\": "src/"
+        },
+        "files": [
+            "src/functions/direction.php",
+            "src/functions/gameOver.php",
+            "src/functions/move.php",
+            "src/functions/renderGame.php",
+            "src/functions/translateKeyPress.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\OstrikovG\\PhpSnakeGame\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hlib Ostrikov",
+            "email": "ostgleal@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "phpunit/phpunit": "^10.1"
+    }
+}
