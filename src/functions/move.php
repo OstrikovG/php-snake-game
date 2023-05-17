@@ -25,11 +25,11 @@ if (!\function_exists('move')) {
         }
 
         // Add to the snakes trail at the front.
-        array_unshift($snake->trail, [$snake->positionX, $snake->positionY]);
+        \array_unshift($snake->trail, [$snake->positionX, $snake->positionY]);
 
         // Remove a block from the end of the snake (but keep correct length).
-        if (count($snake->trail) > $snake->tail) {
-            array_pop($snake->trail);
+        if (\count($snake->trail) > $snake->tail) {
+            \array_pop($snake->trail);
         }
 
         if ($snake->appleX == $snake->positionX && $snake->appleY == $snake->positionY) {
@@ -41,11 +41,11 @@ if (!\function_exists('move')) {
                 $snake->speed = $snake->speed - ($snake->tail * ($snake->width / $snake->height + 10));
             }
             // Figure out a different place for the apple.
-            $appleX = rand(0, $snake->width - 1);
-            $appleY = rand(0, $snake->height - 1);
-            while (array_search([$appleX, $appleY], $snake->trail) !== FALSE) {
-                $appleX = rand(0, $snake->width - 1);
-                $appleY = rand(0, $snake->height - 1);
+            $appleX = \rand(0, $snake->width - 1);
+            $appleY = \rand(0, $snake->height - 1);
+            while (\array_search([$appleX, $appleY], $snake->trail) !== FALSE) {
+                $appleX = \rand(0, $snake->width - 1);
+                $appleY = \rand(0, $snake->height - 1);
             }
             $snake->appleX = $appleX;
             $snake->appleY = $appleY;

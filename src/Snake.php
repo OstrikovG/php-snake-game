@@ -27,15 +27,15 @@ class Snake
         $this->width = $width;
         $this->height = $height;
 
-        $this->positionX = rand(0, $width - 1);
-        $this->positionY = rand(0, $height - 1);
+        $this->positionX = \rand(0, $width - 1);
+        $this->positionY = \rand(0, $height - 1);
 
-        $appleX = rand(0, $width - 1);
-        $appleY = rand(0, $height - 1);
+        $appleX = \rand(0, $width - 1);
+        $appleY = \rand(0, $height - 1);
 
-        while (array_search([$appleX, $appleY], $this->trail) !== FALSE) {
-            $appleX = rand(0, $width - 1);
-            $appleY = rand(0, $height - 1);
+        while (\array_search([$appleX, $appleY], $this->trail) !== FALSE) {
+            $appleX = \rand(0, $width - 1);
+            $appleY = \rand(0, $height - 1);
         }
         $this->appleX = $appleX;
         $this->appleY = $appleY;

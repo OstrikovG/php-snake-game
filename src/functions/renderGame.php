@@ -23,10 +23,10 @@ if (!\function_exists('renderGame')) {
                 }
                 $output .= $cell;
             }
-            $output .= PHP_EOL;
+            $output .= \PHP_EOL;
         }
 
-        $output .= PHP_EOL;
+        $output .= \PHP_EOL;
 
         return $output;
     }

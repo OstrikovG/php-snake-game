@@ -20,11 +20,11 @@ $stdin = \fopen('php://stdin', 'r');
 \stream_set_blocking($stdin, false);
 
 while (true) {
-    system('clear');
-    echo 'Level: ' . $snake->tail . PHP_EOL;
+    \system('clear');
+    echo 'Level: ' . $snake->tail . \PHP_EOL;
     direction($stdin, $snake);
     move($snake);
     echo renderGame($snake);
     gameOver($snake);
-    usleep($snake->speed);
+    \usleep($snake->speed);
 }

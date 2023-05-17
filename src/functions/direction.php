@@ -7,7 +7,7 @@ namespace OstrikovG\PhpSnakeGame\Functions;
 if (!\function_exists('direction')) {
     function direction($stdin, $snake) {
         // Listen to the button being pressed.
-        $key = fgets($stdin);
+        $key = \fgets($stdin);
         if ($key) {
             $key = translateKeypress($key);
             switch ($key) {
