@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace OstrikovG\PhpSnakeGame\Functions;
 
+use OstrikovG\PhpSnakeGame\Snake;
+
 if (!\function_exists('renderGame')) {
-    function renderGame($snake) {
+    function renderGame(Snake $snake): string
+    {
         $output = '';
 
         for ($i = 0; $i < $snake->width; $i++) {

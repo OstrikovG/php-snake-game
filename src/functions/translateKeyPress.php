@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace OstrikovG\PhpSnakeGame\Functions;
 
 if (!\function_exists('translateKeypress')) {
-    function translateKeypress($string) {
+    function translateKeypress(string $string): string
+    {
         switch ($string) {
             case "\033[A":
                 return "UP";

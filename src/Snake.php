@@ -6,24 +6,24 @@ namespace OstrikovG\PhpSnakeGame;
 
 class Snake
 {
-    public $width = 0;
-    public $height = 0;
+    public int $width = 0;
+    public int $height = 0;
 
-    public $positionX = 0;
-    public $positionY = 0;
+    public int $positionX = 0;
+    public int $positionY = 0;
 
-    public $appleX = 15;
-    public $appleY = 15;
+    public int $appleX = 15;
+    public int $appleY = 15;
 
-    public $movementX = 0;
-    public $movementY = 0;
+    public int $movementX = 0;
+    public int $movementY = 0;
 
-    public $trail = [];
-    public $tail = 5;
+    public array $trail = [];
+    public int $tail = 5;
 
-    public $speed = 100000;
+    public int $speed = 100000;
 
-    public function __construct($width, $height) {
+    public function __construct(int $width, int $height) {
         $this->width = $width;
         $this->height = $height;
 
@@ -33,7 +33,7 @@ class Snake
         $appleX = \rand(0, $width - 1);
         $appleY = \rand(0, $height - 1);
 
-        while (\array_search([$appleX, $appleY], $this->trail) !== FALSE) {
+        while (\in_array([$appleX, $appleY], $this->trail)) {
             $appleX = \rand(0, $width - 1);
             $appleY = \rand(0, $height - 1);
         }

@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace OstrikovG\PhpSnakeGame\Functions;
 
+use OstrikovG\PhpSnakeGame\Snake;
+
 if (!\function_exists('move')) {
-    function move($snake) {
+    function move(Snake $snake): void
+    {
         // Move the snake.
         $snake->positionX += $snake->movementX;
         $snake->positionY += $snake->movementY;
@@ -38,12 +41,13 @@ if (!\function_exists('move')) {
 
             if ($snake->speed > 2000) {
                 // Increase the speed of the game up to a certain limit.
-                $snake->speed = $snake->speed - ($snake->tail * ($snake->width / $snake->height + 10));
+                var_dump($snake->speed, $snake->tail, $snake->width, $snake->height);
+                $snake->speed = intval($snake->speed - ($snake->tail * ($snake->width / $snake->height + 10)));
             }
             // Figure out a different place for the apple.
             $appleX = \rand(0, $snake->width - 1);
             $appleY = \rand(0, $snake->height - 1);
-            while (\array_search([$appleX, $appleY], $snake->trail) !== FALSE) {
+            while (\in_array([$appleX, $appleY], $snake->trail)) {
                 $appleX = \rand(0, $snake->width - 1);
                 $appleY = \rand(0, $snake->height - 1);
             }

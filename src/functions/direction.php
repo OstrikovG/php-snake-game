@@ -4,8 +4,14 @@ declare(strict_types=1);
 
 namespace OstrikovG\PhpSnakeGame\Functions;
 
+use OstrikovG\PhpSnakeGame\Snake;
+
 if (!\function_exists('direction')) {
-    function direction($stdin, $snake) {
+    /**
+     * @param resource $stdin
+     */
+    function direction($stdin, Snake $snake): void
+    {
         // Listen to the button being pressed.
         $key = \fgets($stdin);
         if ($key) {
