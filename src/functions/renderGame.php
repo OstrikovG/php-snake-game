@@ -14,14 +14,14 @@ if (!\function_exists('renderGame')) {
         for ($i = 0; $i < $snake->width; $i++) {
             for ($j = 0; $j < $snake->height; $j++) {
                 if ($snake->appleX == $i && $snake->appleY == $j) {
-                    $cell = '0';
+                    $cell = "\033[32m\u{02593}\033[0m";
                 }
                 else {
-                    $cell = '.';
+                    $cell = "\u{02591}";
                 }
                 foreach ($snake->trail as $trail) {
                     if ($trail[0] == $i && $trail[1] == $j) {
-                        $cell = 'X';
+                        $cell = "\u{02593}";
                     }
                 }
                 $output .= $cell;
